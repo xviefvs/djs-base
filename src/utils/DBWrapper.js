@@ -8,7 +8,7 @@ module.exports = class Wrapper {
 	}
 
 	async init() {
-		const guilds = await this.model.find;
+		const guilds = await this.model.find();
 
 		for (const i in guilds) {
 			const guild = guilds[i];
