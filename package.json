@@ -1,0 +1,30 @@
+{
+  "name": "djs-base",
+  "version": "0.0.0",
+  "description": "A discord.js base for making a bot",
+  "main": "./src/bot.js",
+  "scripts": {
+    "start": "node ./src/bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xviefvs/djs-base.git"
+  },
+  "keywords": [
+    "djs-base"
+  ],
+  "author": "Tomc#7817",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xviefvs/djs-base/issues"
+  },
+  "homepage": "https://github.com/xviefvs/djs-base#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "glob": "^7.1.6",
+    "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

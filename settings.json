@@ -1,0 +1,15 @@
+{
+	"owners": [],
+	"embed_main": "#85aded",
+	"embed_invis": "#2F3136",
+	"embed_alt": "#d0ed87",
+	"embed_err": "#f54574",
+	"emotes": {
+		"loading": "⏱",
+		"warning": "⚠️",
+		"info": "❗️",
+		"error": "🚫",
+		"success": "✅",
+		"sharingan": ""
+	}
+}
