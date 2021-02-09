@@ -11,3 +11,50 @@
 
 
 `mongo_uri`: Go [Here](https://www.mongodb.com/cloud/atlas)
+
+### A command example
+```js
+const Command = require('../../struct/Command');
+
+module.exports = class extends Command {
+	
+	constructor(...args) {
+		super(...args, {
+			name: 'ban',
+			desc: 'Ban a member',
+			usage: '[member]',
+			example: ['@tomc#7817'],
+			category: 'Moderation',
+			guildOnly: true,
+			ownerOnly: false,
+			userPerms: ['BAN_MEMBER'],
+			botPerms: ['BAN_MEMBER'],
+			nsfw: false,
+			args: true,
+			voice: false,
+			sameVoice: false
+		})
+	}
+	
+	run(message, args) {
+		// Your code here
+	}
+}
+```
+
+### Event example 
+```js
+const Event = require('../../struct/Event')
+
+module.exports = class extends Event {
+	
+	constructor(...args) {
+		super(...args, {
+			name: 'message',
+		})
+	}
+	
+	run(message) {
+		// Your code here
+	}
+}

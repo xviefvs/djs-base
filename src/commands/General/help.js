@@ -4,7 +4,7 @@ module.exports = class HelpCommand extends Command {
 	
 	constructor(...args) {
 		super(...args, {
-			description: 'Get all the available commands.',
+			desc: 'Get all the available commands.',
 			usage: '[command]',
 			example: ['ping']
 		})
@@ -19,14 +19,16 @@ module.exports = class HelpCommand extends Command {
 		.setTimestamp()
 		
 		if (command) {
-			const cmd = this.client.commands.get(cmd) || this.client.commands.get(this.client.aliases.get(cmd))
+			const cmd = this.client.commands.get(command) || this.client.commands.get(this.client.aliases.get(command))
 			
 			if (!cmd) return message.channel.send('Invalid command.')
 			
-			embed.setAuthor('Everything in `<>` is required, `[]` is a optional parameter', message.author.displayAvatarURL({ dynamic: true }))
-			embed.setTitle(`\`${prefix}\`${cmd.name}\` \`${cmd.usage ? cmd.usage : ''}\``)
-			embed.addField('Usage', cmd.usage ? '`' + prefix + cmd.name + cmd.usage + '`' : 'No usage')
-			embed.addField('Example', cmd.example.length ? cmd.example.map(m => `\`${prefix}${cmd.name} ${m}\``) : 'No example')
+			embed.setAuthor('Everything in <> is a required parameter, [] is a optional parameter', message.author.displayAvatarURL({ dynamic: true }))
+			embed.setTitle(`\`${prefix}${cmd.name} ${cmd.usage.length ? cmd.usage : ''}\``)
+			embed.addField('Description', cmd.desc)
+			embed.addField('Aliases', cmd.aliases.length ? cmd.aliases.map(cmd => `\`${cmd}\``).join(' ') : 'Therr is no alias for this command.')
+			embed.addField('Usage', cmd.usage.length ? '`' + prefix + cmd.name + cmd.usage + '`' : 'There is no usage for this command.')
+			embed.addField('Example', cmd.example.length ? cmd.example.map(m => `\`${prefix}${cmd.name} ${m}\``) : 'There is no example for this command.')
 			
 			return message.channel.send(embed)
 		}

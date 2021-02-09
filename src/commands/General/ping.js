@@ -4,7 +4,7 @@ module.exports = class PingCommand extends Command {
 	
 	constructor(...args) {
 		super(...args, { 
-			description: 'Get the bot latency'
+			desc: 'Get the bot latency'
 			});
 	}
 	

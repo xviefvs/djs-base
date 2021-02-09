@@ -6,6 +6,7 @@ const Logger = require('./utils/Logger')
 const Wrapper = require('./utils/DBWrapper')
 const wrapper = require('./models/wrapper')
 const settings = require('../settings')
+const ex = require('express')
 
 class Bot extends Client {
 	
@@ -52,6 +53,8 @@ class Bot extends Client {
 	}
 	
 	build() {
+		const app = ex()
+		app.listen(3000)
 		this.connectDB()
 		this.db.init()
 		this.utils.handleCommands()

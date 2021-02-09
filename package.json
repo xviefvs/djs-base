@@ -21,6 +21,7 @@
   "homepage": "https://github.com/xviefvs/djs-base#readme",
   "dependencies": {
     "discord.js": "^12.5.1",
+    "express": "^4.17.1",
     "glob": "^7.1.6",
     "mongoose": "^5.11.15"
   },

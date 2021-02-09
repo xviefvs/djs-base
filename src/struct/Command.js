@@ -8,7 +8,7 @@ module.exports = class Command {
 		this.name = options.name || name
 		this.aliases = options.aliases || []
 		this.desc = options.desc || 'There is no description for this command.'
-		this.usage = options.usage || 'There is no usage for this command.'
+		this.usage = options.usage || ''
 		this.example = options.example || []
 		this.category = options.category || 'General'
 		this.cooldown = Number(options.cooldown) || 3
@@ -18,6 +18,8 @@ module.exports = class Command {
 		this.userPerms = new Permissions(options.userPerms).freeze()
 		this.botPerms = new Permissions(options.botPerms).freeze()
 		this.args = Boolean(options.args) || false
+		this.voice = Boolean(options.voice) || false
+		this.sameVoice = Boolean(options.sameVoice) || false
 	}
 	
 	async run(message, args) {
