@@ -75,3 +75,13 @@ Use this like quick.db
 this.client.db.get(guildId: string, key: string, defaultValue: any)
 ```
 If the data doesn't exist it will return the default value instead.
+
+```js
+this.client.db.delete(guildId: string, key: string)
+```
+Delete data from a key you provided
+
+```js
+this.client.db.clear(guildId: string)
+```
+Delete all the data from a guild
