@@ -58,6 +58,7 @@ module.exports = class extends Event {
 		// Your code here
 	}
 }
+```
 
 ### How to use db wrapper.
 ```js
