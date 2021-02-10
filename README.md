@@ -58,3 +58,19 @@ module.exports = class extends Event {
 		// Your code here
 	}
 }
+
+### How to use db wrapper.
+```js
+this.client.db.getDocument(guildId: string)
+```
+Return all the data for the guild
+
+```js
+this.client.db.set(guildId: string, key: string, value: any)
+```
+Use this like quick.db
+
+```js
+this.client.db.get(guildId: string, key: string, defaultValue: any)
+```
+If the data doesn't exist it will return the default value instead.
